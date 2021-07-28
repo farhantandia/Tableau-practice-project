@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20203.20.0918.1727                               -->
+<workbook original-version='18.1' source-build='2020.3.1 (20203.20.0918.1727)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Quota+ (Sales_Quota)' inline='true' name='federated.0et2r2o1kqpbtr13kymim0mlplug' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Sales_Quota' name='excel-direct.06az1tv1uqkkiu1g8an260ahu239'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='G:/Shared drives/DS Team/TABLEAU COURSE/Resources &amp; Workbooks/Bootcamp/Section 6 - Data Prepapration/Sales_Quota.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[Quota].[Month]' />
+                <expression op='[Sales].[Month]' />
+              </expression>
+              <expression op='='>
+                <expression op='[Quota].[Sales Person]' />
+                <expression op='[Sales].[Sales Person]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation connection='excel-direct.06az1tv1uqkkiu1g8an260ahu239' name='Quota' table='[Quota$]' type='table'>
+            <columns gridOrigin='A1:C5:no:A1:C5:0' header='yes' outcome='6'>
+              <column datatype='string' name='Sales Person' ordinal='0' />
+              <column datatype='string' name='Month' ordinal='1' />
+              <column datatype='integer' name='Sales Quota' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.06az1tv1uqkkiu1g8an260ahu239' name='Sales' table='[Sales$]' type='table'>
+            <columns gridOrigin='A1:D7:no:A1:D7:0' header='yes' outcome='6'>
+              <column datatype='string' name='Sales Person' ordinal='0' />
+              <column datatype='string' name='Client' ordinal='1' />
+              <column datatype='integer' name='Deal Size' ordinal='2' />
+              <column datatype='string' name='Month' ordinal='3' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[Quota].[Month]' />
+                <expression op='[Sales].[Month]' />
+              </expression>
+              <expression op='='>
+                <expression op='[Quota].[Sales Person]' />
+                <expression op='[Sales].[Sales Person]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation connection='excel-direct.06az1tv1uqkkiu1g8an260ahu239' name='Quota' table='[Quota$]' type='table'>
+            <columns gridOrigin='A1:C5:no:A1:C5:0' header='yes' outcome='6'>
+              <column datatype='string' name='Sales Person' ordinal='0' />
+              <column datatype='string' name='Month' ordinal='1' />
+              <column datatype='integer' name='Sales Quota' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.06az1tv1uqkkiu1g8an260ahu239' name='Sales' table='[Sales$]' type='table'>
+            <columns gridOrigin='A1:D7:no:A1:D7:0' header='yes' outcome='6'>
+              <column datatype='string' name='Sales Person' ordinal='0' />
+              <column datatype='string' name='Client' ordinal='1' />
+              <column datatype='integer' name='Deal Size' ordinal='2' />
+              <column datatype='string' name='Month' ordinal='3' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Client]' value='[Sales].[Client]' />
+          <map key='[Deal Size]' value='[Sales].[Deal Size]' />
+          <map key='[Month (Sales)]' value='[Sales].[Month]' />
+          <map key='[Month]' value='[Quota].[Month]' />
+          <map key='[Sales Person (Sales)]' value='[Sales].[Sales Person]' />
+          <map key='[Sales Person]' value='[Quota].[Sales Person]' />
+          <map key='[Sales Quota]' value='[Quota].[Sales Quota]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Quota]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C5:no:A1:C5:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sales]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D7:no:A1:D7:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales Person</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Sales Person]</local-name>
+            <parent-name>[Quota]</parent-name>
+            <remote-alias>Sales Person</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[Quota]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales Quota</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales Quota]</local-name>
+            <parent-name>[Quota]</parent-name>
+            <remote-alias>Sales Quota</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales Person</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Sales Person (Sales)]</local-name>
+            <parent-name>[Sales]</parent-name>
+            <remote-alias>Sales Person</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Client</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Client]</local-name>
+            <parent-name>[Sales]</parent-name>
+            <remote-alias>Client</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deal Size</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deal Size]</local-name>
+            <parent-name>[Sales]</parent-name>
+            <remote-alias>Deal Size</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Month (Sales)]</local-name>
+            <parent-name>[Sales]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' hidden='true' name='[Month (Sales)]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[Sales Person (Sales)]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Quota' datatype='table' name='[__tableau_internal_object_id__].[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Quota' id='Quota_87E8D1FA3DDA44FBA110B9A5C73F4131'>
+            <properties context=''>
+              <relation join='inner' type='join'>
+                <clause type='join'>
+                  <expression op='AND'>
+                    <expression op='='>
+                      <expression op='[Quota].[Month]' />
+                      <expression op='[Sales].[Month]' />
+                    </expression>
+                    <expression op='='>
+                      <expression op='[Quota].[Sales Person]' />
+                      <expression op='[Sales].[Sales Person]' />
+                    </expression>
+                  </expression>
+                </clause>
+                <relation connection='excel-direct.06az1tv1uqkkiu1g8an260ahu239' name='Quota' table='[Quota$]' type='table'>
+                  <columns gridOrigin='A1:C5:no:A1:C5:0' header='yes' outcome='6'>
+                    <column datatype='string' name='Sales Person' ordinal='0' />
+                    <column datatype='string' name='Month' ordinal='1' />
+                    <column datatype='integer' name='Sales Quota' ordinal='2' />
+                  </columns>
+                </relation>
+                <relation connection='excel-direct.06az1tv1uqkkiu1g8an260ahu239' name='Sales' table='[Sales$]' type='table'>
+                  <columns gridOrigin='A1:D7:no:A1:D7:0' header='yes' outcome='6'>
+                    <column datatype='string' name='Sales Person' ordinal='0' />
+                    <column datatype='string' name='Client' ordinal='1' />
+                    <column datatype='integer' name='Deal Size' ordinal='2' />
+                    <column datatype='string' name='Month' ordinal='3' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Why Blending'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Quota+ (Sales_Quota)' name='federated.0et2r2o1kqpbtr13kymim0mlplug' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0et2r2o1kqpbtr13kymim0mlplug'>
+            <column caption='{ INCLUDE [Month]:SUM([Sales Quota])}' datatype='integer' name='[Calculation_406168426533195778]' role='measure' type='quantitative' user:unnamed='Sheet 1'>
+              <calculation class='tableau' formula='{ INCLUDE [Month]:SUM([Sales Quota])}' />
+            </column>
+            <column datatype='integer' name='[Deal Size]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Month]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Sales Person]' role='dimension' type='nominal' />
+            <_.fcp.ObjectModelTableType.false...column caption='Quota' datatype='integer' name='[__tableau_internal_object_id__].[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Sales Quota]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='Quota' datatype='table' name='[__tableau_internal_object_id__].[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Quota_87E8D1FA3DDA44FBA110B9A5C73F4131]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Quota_87E8D1FA3DDA44FBA110B9A5C73F4131:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Month]' derivation='None' name='[none:Month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales Person]' derivation='None' name='[none:Sales Person:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_406168426533195778]' derivation='Sum' name='[sum:Calculation_406168426533195778:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Deal Size]' derivation='Sum' name='[sum:Deal Size:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0et2r2o1kqpbtr13kymim0mlplug].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0et2r2o1kqpbtr13kymim0mlplug].[__tableau_internal_object_id__].[cnt:Quota_87E8D1FA3DDA44FBA110B9A5C73F4131:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0et2r2o1kqpbtr13kymim0mlplug].[sum:Deal Size:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0et2r2o1kqpbtr13kymim0mlplug].[sum:Calculation_406168426533195778:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0et2r2o1kqpbtr13kymim0mlplug].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0et2r2o1kqpbtr13kymim0mlplug].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0et2r2o1kqpbtr13kymim0mlplug].[none:Month:nk] / [federated.0et2r2o1kqpbtr13kymim0mlplug].[none:Sales Person:nk])</rows>
+        <cols>[federated.0et2r2o1kqpbtr13kymim0mlplug].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{50840A40-0BF3-4846-A250-3A276AF3B847}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Why Blending'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0et2r2o1kqpbtr13kymim0mlplug].[none:Calculation_406168426532753408:qk]</field>
+            <field>[federated.0et2r2o1kqpbtr13kymim0mlplug].[none:Month:nk]</field>
+            <field>[federated.0et2r2o1kqpbtr13kymim0mlplug].[none:Sales Person:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7D41DE94-0AED-4DDA-A8C5-8CFA6E781DF8}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='124' name='Why Blending' width='192'>
+      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
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
